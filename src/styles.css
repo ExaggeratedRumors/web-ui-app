@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    background-image: linear-gradient(to right, indigo, navy, blue);
+}
+
+footer {
+    padding: 20px;
+    color: white;
+    font-size: 1.5vw;
+}
+
+h1 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 4vw;
+    color: white;
+}
+
+p {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table{
+    width: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    border-collapse: separate;
+}
+
+table, th, td {
+    border: 2px solid;
+    background-color: white;
+    font-size: 1.5vw;
+}
+
+th {
+    font-size: 2vw;
+    text-align: center;
+    background-color: blanchedalmond;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: maroon;
+    border-color: black;
+}   
+
+td {
+    padding: 1vh;
+}
+
+.collapsible {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
