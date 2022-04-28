@@ -2,24 +2,59 @@ html {
     height: 100%;
 }
 
+.dark-mode{
+  --background-image-v: linear-gradient(to left, rgb(11, 19, 43), rgb(28, 37, 65), rgb(33, 44, 77));
+  --color: #5BC0BE;
+  --background-color-th: #3A506B;
+  --background-color-td: #58779e;
+  --contrast-color: #0B132B;
+}
+
+.light-mode{
+  --background-image-v: linear-gradient(to right, #FDF5F1, #EBDBD7, #FDF5F1);
+  --color: #6e8d76;
+  --background-color-td: #EBDBD7;
+  --background-color-th: #E4B3AD;
+  --contrast-color: #3e4e4a;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 500px;
-    background-image: linear-gradient(to right, indigo, navy, blue);
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  background-image: var(--background-image-v);
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.toggle {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  padding: 15px 15px;
+  border-radius: 10px;
+  color: var(--color);
+  font-size: 1.5vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--background-color-td);
+  transition: all .5s ease;
 }
 
 footer {
     padding: 20px;
-    color: white;
+    color: var(--color);
     font-size: 1.5vw;
 }
 
 h1 {
+    text-shadow: 3px 3px var(--contrast-color);
     text-align: center;
     font-family: cursive;
     font-size: 4vw;
-    color: white;
+    color: var(--color);
 }
 
 p {
@@ -43,28 +78,22 @@ table{
 
 table, th, td {
     border: 2px solid;
-    background-color: white;
+    border-color: var(--contrast-color);
+    background-color: var(--background-color-td);
     font-size: 1.5vw;
 }
 
 th {
     font-size: 2vw;
+    text-shadow: 2px 1px var(--contrast-color);
     text-align: center;
-    background-color: blanchedalmond;
+    background-color: var(--background-color-th);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: maroon;
-    border-color: black;
-}   
+    color: var(--color);
+    border-color: var(--contrast-color);
+}
 
 td {
     padding: 1vh;
-}
-
-.collapsible {
-    width: 100%;
     text-align: center;
-    font-weight: bold;
-    outline: none;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
+}
