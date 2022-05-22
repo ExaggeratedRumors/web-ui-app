@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-3 justify-content-center offset-1">
+            <div *ngFor="let item of students">{{item.id}}. {{item.lastname}} {{item.name}} {{item.index}} </div>
+          </div>
+        </div>
+      </div> <br><br>
+        <form #formdata="ngForm" (ngSubmit)="addStudent()">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-md-2 form-group">
+                      <p><label for="index">Index</label></p>
+                      <input id="index" class="form-control" type="text" name="index" [(ngModel)]="student.index" placeholder="index">
+                  </div>
+                  <div class="col-md-2 form-group offset-md-1">
+                      <p><label for="name">Imię</label></p>
+                      <input id="name" class="form-control" type="text" name="name" [(ngModel)]="student.name" placeholder="imię">
+                  </div>
+                  <div class="col-md-2 form-group offset-md-1">
+                      <p><label for="lastname">Nazwisko</label></p>
+                      <input id="lastname" class="form-control" type="text" name="lastname" [(ngModel)]="student.lastname" placeholder="nazwisko">
+                  </div>
+              </div>
+             </div>
+             <hr>
+             <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-5 offset-md-2">
+                      <button class="btn btn-success offset-1" type="submit">Dodaj</button>
+                      <button class="btn btn-danger offset-1" type="button" (click)="removeStudent()">Usuń</button>
+                      <button class="btn btn-primary offset-1" type="reset">Wyczyść</button>
+                  </div>
+                  <div class="col-md-2 offset-md-1"></div>
+                </div>
+              </div>
+        </form>
+    </div>
+</div>

@@ -11,7 +11,7 @@ html {
 }
 
 .light-mode{
-  --background-image-v: linear-gradient(to right, #FDF5F1, #EBDBD7, #FDF5F1);
+  --background-image-v: linear-gradient(to right, #FDF5F1, #EBDBD7, #cac7c5);
   --color: #6e8d76;
   --background-color-td: #EBDBD7;
   --background-color-th: #E4B3AD;
@@ -23,13 +23,14 @@ body {
   flex-direction: column;
   min-height: 500px;
   background-image: var(--background-image-v);
+  color: var(--color);
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .toggle {
   position: absolute;
-  top: 5%;
+  top: 85%;
   left: 5%;
   outline: none;
   border: 0;
@@ -96,4 +97,9 @@ th {
 td {
     padding: 1vh;
     text-align: center;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
