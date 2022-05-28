@@ -170,6 +170,7 @@ body
 	margin-bottom: 0;
 	padding-bottom: 10px;
 	background-color: var(--main-color);
+  transition: all .5s ease;
 }
 
 #vertically
