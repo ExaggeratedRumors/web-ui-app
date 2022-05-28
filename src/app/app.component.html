@@ -1,32 +1,20 @@
 <body>
-  <br><br>
-	<app-dark-mode></app-dark-mode>
-	<app-temp-form></app-temp-form>
-  <br><br>
-	<h1>Przydatne linki</h1>
-
-   <table>
-	  <tr>
-		<th>DeepL</th>
-		<th>Dante</th>
-		<th>StackOverflow</th>
-	  </tr>
-	  <tr>
-		<td><p><a href="https://www.deepl.com/pl/translator"><img src="assets/deepl.png" alt ="obraz z assetów"/></a></p></td>
-		<td><p><a href="https://dante.iis.p.lodz.pl/#/mysubjects"><img src="assets/stack.jpg" alt ="obraz z src" /></a></p></td>
-		<td><p><a href="https://stackoverflow.com"><img src="assets/dante.png" alt ="obraz z assetów" /></a></p></td>
-	  </tr>
-	  <tr>
-		<td><a href="https://www.deepl.com/pl/translator">Translator bazujący na ML</a></td>
-		<td><a href="https://dante.iis.p.lodz.pl/#/mysubjects">System testów jednostkowych</a></td>
-		<td><a href="https://stackoverflow.com">Kiedy 20 prób nie wystarczyło</a></td>
-	  </tr>
-	</table>
-  </body>
-
-  <footer>
-	<hr>
-	<p>Autor: Dominik Gajda</p>
-	<p>Szablon strony zaprojektowany na potrzeby ćwiczeń: 31.03.2022, Politechnika Łódzka</p>
-  </footer>
+  <div id="menu">
+    <ul>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/list">Kursy</a></li>
+      <li><a href="mailto: letscourse_info@wp.pl">Skontaktuj się</a></li>
+      <li><app-dark-mode></app-dark-mode></li>
+      <li><a href="/main">Strona Główna</a></li>
+      <li><img class="img-responsive-logo"  src="assets\images\logo.jpg" alt="logo"></li>
+    </ul>
+  </div>
   <router-outlet></router-outlet>
+  <div id="footer">
+    <div class="contact">KONTAKT:</div>
+    <div class="contact">TEL.: 695-998-859</div>
+    <div class="contact">E-MAIL: letscourse_info@wp.pl</div><br>
+    <p class="disclaimer">&copy; Igor Tylak, Krzysztof Kaniuka, Dominik Gajda 2022</p>
+    <p class="disclaimer"> Wszystkie treści na tej stronie są jedynie wypełniaczami, a nie prawdziwymi ofertami. Adresy e-mail oraz numery telefonów nie są realnymi kontaktami.</p>
+  </div>
+</body>
