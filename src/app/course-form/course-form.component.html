@@ -1,47 +1,48 @@
-<div class="desc">
-  <div class="description">
-    <div class="row">
-      <div class="col-xs-12 col-lg-12">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-3 justify-content-center offset-1">
-              To jest testowy formularz, swobodnie edytujcie.
-              <div *ngFor="let item of requests">{{item.id}}. {{item.name}} {{item.lastname}} {{item.email}} </div>
-            </div>
-          </div>
-        </div> <br><br>
-          <form #formdata="ngForm" (ngSubmit)="submit()">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-2 form-group">
-                        <p><label for="name">Imię</label></p>
-                        <input id="name" class="form-control" type="text" name="name" [(ngModel)]="request.name" placeholder="imię">
-                    </div>
-                    <div class="col-md-2 form-group offset-md-1">
-                        <p><label for="lastname">Nazwisko</label></p>
-                        <input id="lastname" class="form-control" type="text" name="lastname" [(ngModel)]="request.lastname" placeholder="nazwisko">
-                    </div>
-                    <div class="col-md-2 form-group offset-md-1">
-                        <p><label for="email">E-mail</label></p>
-                        <input id="email" class="form-control" type="text" name="email" [(ngModel)]="request.email" placeholder="e-mail">
-                    </div>
-                </div>
+<div id="block">
+  <div class="desc">
+    <div class="description">
+      <div class="row">
+        <div class="col-xs-12 col-lg-12">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-3 justify-content-center offset-1">
+                To jest testowy formularz, swobodnie edytujcie.
+                <div *ngFor="let item of requests">{{item.id}}. {{item.name}} {{item.lastname}} {{item.email}} </div>
               </div>
-              <hr>
+            </div>
+          </div> <br><br>
+            <form #formdata="ngForm" (ngSubmit)="submit()">
               <div class="container">
                   <div class="row justify-content-center">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-5 offset-md-2">
-                        <button class="btn btn-success offset-1" type="submit">Dodaj</button>
-                        <button class="btn btn-danger offset-1" type="button" (click)="remove()">Usuń</button>
-                        <button class="btn btn-primary offset-1" type="reset">Wyczyść</button>
-                    </div>
-                    <div class="col-md-2 offset-md-1"></div>
+                      <div class="col-md-2 form-group">
+                          <p><label for="name">Imię</label></p>
+                          <input id="name" class="form-control" type="text" name="name" [(ngModel)]="request.name" placeholder="imię">
+                      </div>
+                      <div class="col-md-2 form-group offset-md-1">
+                          <p><label for="lastname">Nazwisko</label></p>
+                          <input id="lastname" class="form-control" type="text" name="lastname" [(ngModel)]="request.lastname" placeholder="nazwisko">
+                      </div>
+                      <div class="col-md-2 form-group offset-md-1">
+                          <p><label for="email">E-mail</label></p>
+                          <input id="email" class="form-control" type="text" name="email" [(ngModel)]="request.email" placeholder="e-mail">
+                      </div>
                   </div>
                 </div>
-          </form>
+                <hr>
+                <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-5 offset-md-2">
+                          <button class="btn btn-success offset-1" type="submit">Dodaj</button>
+                          <button class="btn btn-danger offset-1" type="button" (click)="remove()">Usuń</button>
+                          <button class="btn btn-primary offset-1" type="reset">Wyczyść</button>
+                      </div>
+                      <div class="col-md-2 offset-md-1"></div>
+                    </div>
+                  </div>
+            </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<br><br>

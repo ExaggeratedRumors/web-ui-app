@@ -267,7 +267,7 @@ h2
   display: block;
   text-align: center;
   height: 5.5vw;
-  padding: 1.5vw 2vw;
+  padding: 1.65vw 2vw;
   border-radius: 10px;
   color: var(--sharp-font-color);
   text-decoration: none;
@@ -319,7 +319,8 @@ li a:hover {
 	background-color: var(--list-color);
 	padding: 25px;
 	max-width: 75%;
-	margin: auto;
+
+  margin: auto;
 	margin-top: 20px;
   transition: all .5s ease;
 }
@@ -443,6 +444,7 @@ h4
 	margin-bottom: auto;*/
 	background-color: var(--list-color);
 	margin-right: 60px;
+  transition: all .5s ease;
 }
 .contact h2
 {
@@ -529,7 +531,7 @@ h4
   width: 15vw;
   height: 5.5vw;
   cursor: pointer;
-  padding: 1.5vw 2vw;
+  padding: 1.65vw 2vw;
   border-radius: 10px;
   color: var(--sharp-font-color);
   font-size: 1.5vw;
@@ -542,8 +544,38 @@ button:hover {
   background-color: var(--main-color);
 }
 
-
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+.navbar-toggler {
+  width: 80vw;
+}
+
+.card {
+  background-color: var(--list-color);
+  transition: all .5s ease;
+  border-width: 3px;
+  color: var(--font-color);
+}
+
+button {
+  color: var(--font-color);
+}
+
+.card-body{
+  background-color: var(--curse-color);
+  transition: all .5s ease;
+}
+
+.faq {
+  margin-top: 0;
+	margin-left: auto;
+	margin-bottom: 0;
+	margin-right: auto;
+	padding-top: 80px;
+	padding-bottom: 140px;
+	background-color:  var(--main-color);
+  transition: all .5s ease;
 }

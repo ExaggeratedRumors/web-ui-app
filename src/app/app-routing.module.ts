@@ -11,6 +11,7 @@ import { JavaComponent } from './java/java.component';
 import { HairdressingComponent } from './hairdressing/hairdressing.component';
 import { EntryFormComponent } from './entry-form/entry-form.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [];
 
@@ -28,6 +29,7 @@ const routes: Routes = [];
       {path: 'hairdressing', component: HairdressingComponent},
       {path: 'entry-form', component: EntryFormComponent},
       {path: 'course-form', component: CourseFormComponent},
+      {path: 'faq', component: FaqComponent},
       {path: '', redirectTo: '/main', pathMatch: 'full'},
     ]),
   ],
