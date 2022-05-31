@@ -42,21 +42,20 @@ export class EntryFormComponent implements OnInit {
     p9: ''
   };
 
-  requests: Request[] = [];
-
   constructor(private base: BaseService) { }
 
   ngOnInit(): void {
+    this.getData();
   }
 
-  getData( ): void {
-    this.base.getRequest().subscribe(t_request => {
-      this.request = t_request;
-    });
+  putData(): void {
+    this.base.putRequest(this.request);
   }
 
-  remove() {
-     this.requests.pop();
+  getData(): void {
+    this.base.getRequest().subscribe(data => {
+      this.request = data[0];
+    })
   }
 
   submit() {
@@ -64,8 +63,8 @@ export class EntryFormComponent implements OnInit {
     this.request.p0 = this.name.value;
     this.request.p1 = this.lastname.value
     this.request.p2 = this.email.value;
+    this.putData();
     this.getData();
-    this.requests.push(this.request);
     this.info="Zostałeś zapisany!";
   }
   this.name.setValue("");
