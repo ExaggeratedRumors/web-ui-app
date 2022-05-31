@@ -5,14 +5,16 @@
   --list-color: #0f4183;
   --footer-color: #829fdf;
   --border-color: #000000cc;
-  --href-color: #afd2ff80;
-  --hover-color: #afd2ff;
+  --href-color: #92add180;
+  --hover-color: #90acd1;
   --grid-price-color: #6ac6e280;
+  --grid-price-color-hover: #6ac6e2;
   --font-color: #5BC0BE;
   --sharp-font-color: rgb(143, 182, 184);
   --background-color-th: #3A506B;
   --background-color-td: #58779e;
   --contrast-color: #0B132B;
+  --li-hover: #1d2f67;
 }
 
 .light-mode{
@@ -23,13 +25,15 @@
   --footer-color: #ffffffcb;
   --border-color: #000000cc;
   --href-color: #004d4d80;
-  --hover-color: #004d4d;
+  --hover-color: #018383;
   --grid-price-color: #007b7b80;
+  --grid-price-color-hover: #007b7b;
   --font-color: #d0e0d4;
   --sharp-font-color: #a9cfb2;
   --background-color-td: #EBDBD7;
   --background-color-th: #E4B3AD;
   --contrast-color: #3e4e4a;
+  --li-hover: #6e6e6e;
 }
 
 html
@@ -57,8 +61,9 @@ body
 	padding-top: 20px;
 	padding-bottom: 20px;
 	background-color: var(--main-color);
-  text-shadow: 3px 3px var(--contrast-color);
-  transition: all .5s ease;
+  	/*text-shadow: 3px 3px var(--contrast-color);*/
+	text-shadow: -3px -3px 5px var(--contrast-color), 3px -3px 5px var(--contrast-color), -3px 3px 5px var(--contrast-color), 3px 3px 5px var(--contrast-color);
+  	transition: all .5s ease;
 }
 
 #recommended
@@ -114,6 +119,7 @@ body
 	color: inherit;
 	align-items: center;
 	background-color: var(--curse-color);
+	text-align: center;
 }
 
 .all_courses
@@ -145,18 +151,35 @@ body
 	letter-spacing: 2px;
 	font-weight: bold;
 	font-size: 2.5vw;
-  text-shadow: 2px 2px var(--contrast-color);
+  	/*text-shadow: 2px 2px var(--contrast-color);*/
+  	text-shadow: -2px -2px 2px var(--contrast-color), 2px -2px 2px var(--contrast-color), -2px 2px 2px var(--contrast-color), 2px 2px 2px var(--contrast-color);
 }
 
 .all_courses a
 {
 	text-decoration: none;
 	color: inherit;
+	width: max-content;
+	height: fit-content;
+	width: 100%;
+	display: inline-block;
+}
+
+.all_courses p
+{
+	text-shadow: -3px -3px 3px var(--contrast-color), 3px -3px 3px var(--contrast-color), -3px 3px 3px var(--contrast-color), 3px 3px 3px var(--contrast-color);
+}
+
+.all_courses p:hover
+{
+	background: var(--hover-color);
+	transition: all .5s ease;
 }
 
 .all_courses a:hover
 {
 	text-decoration: underline;
+  	transition: all .5s ease;
 }
 
 /* SECOND RECTANGLE */
@@ -199,11 +222,16 @@ img
 	max-width:100%;
 }
 
+:not(.course) img:not(.img-responsive-logo)
+{
+	box-shadow: 10px 10px 10px var(--list-color), -10px 10px 10px var(--list-color), 10px -10px 10px var(--list-color), -10px -10px 10px var(--list-color);
+}
+
 .advertImg
 {
 	margin-left: 30px;
 	margin-top: 30px;
-	flex-basis: 50%;
+	flex-basis: 35%;
 }
 
 .image img, .advertImg img
@@ -222,6 +250,13 @@ img
 	align-items: center;
 	background-color: var(--curse-color);
 	margin-right: 45px;
+	margin-top: 20px;
+	border: 5px solid transparent;
+}
+
+.advertTxt h1
+{
+	text-align: center;
 }
 
 h1
@@ -233,10 +268,15 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 h2
 {
-	margin-top: 50px;
+	/*margin-top: 50px;*/
 	letter-spacing: 2px;
 	font-size: 18px;
 	text-align: center;
+}
+
+.span-italic
+{
+	font-style: italic;
 }
 
 #menu
@@ -278,7 +318,7 @@ h2
 }
 
 li a:hover {
-  background-color: var(--main-color);
+  background-color: var(--li-hover);
   transition: all .5s ease;
 }
 
@@ -395,9 +435,17 @@ h4
 	/*margin-bottom: auto;
 	margin-top: auto;*/
 	background-color: var(--list-color);
-	margin-right: 60px;
+	margin-right: 30px;
+	margin-left: 30px;
 	padding: 10px;
   transition: all .5s ease;
+}
+
+#verticaly-form .contact
+{
+	margin-right: 30px;
+	margin-left: 30px;
+  	transition: all .5s ease;
 }
 
 #block
@@ -415,7 +463,8 @@ h4
 .text
 {
 	flex-basis: 50%;
-	margin-left: 45px;
+	margin-left: 25px;
+	justify-content: center;
 }
 
 .price h1
@@ -433,7 +482,8 @@ h4
 	/*margin-top: 40px;*/
 	padding-top: 3vw;
 	padding-bottom: 3vw;
-	justify-content: left;
+	justify-content: center;
+	align-items: center;
 	flex-basis: 50%;
 	margin-left: 40px;
 	margin-right: 20px;
@@ -444,8 +494,10 @@ h4
 	/*margin-top: auto;
 	margin-bottom: auto;*/
 	background-color: var(--list-color);
-	margin-right: 60px;
-  transition: all .5s ease;
+	/*margin-right: 60px;*/
+  	transition: all .5s ease;
+	margin-left: auto;
+	margin-right: auto;
 }
 .contact h2
 {
@@ -506,8 +558,9 @@ h4
   position: absolute;
   top: 0%;
   left: 0%;
-	width: max(25vw, 300px);
-	height: max(5.8vw, 70px);
+	width: max(25vw);
+	height: max(5.5vw);
+	transition: all .5s ease;
 }
 
 
@@ -518,11 +571,12 @@ h4
 	font-size: max(1.5vw, 13px);
 	padding: 5px;
 	border: 1px solid var(--border-color);
+	text-shadow: -1px -1px 3px var(--contrast-color), 1px -1px 3px var(--contrast-color), -1px 1px 3px var(--contrast-color), 1px 1px 3px var(--contrast-color);
 }
 
 .course a:hover + .grid-price
 {
-	background-color: var(--grid-price-color);
+	background-color: var(--grid-price-color-hover);
 }
 
 .toggle {
@@ -542,7 +596,7 @@ h4
 }
 
 button:hover {
-  background-color: var(--main-color);
+  background-color: var(--li-hover);
 }
 
 .btn:focus {
@@ -551,10 +605,11 @@ button:hover {
 }
 
 .navbar-toggler {
-  width: 80vw;
+  width: 100%;
 }
 
 .card {
+  width: 100%;
   background-color: var(--list-color);
   transition: all .5s ease;
   border-width: 3px;
@@ -579,4 +634,13 @@ button {
 	padding-bottom: 140px;
 	background-color:  var(--main-color);
   transition: all .5s ease;
+}
+
+#course_input_desc {
+  height: 20vw;
+  width: 83%;
+}
+
+#create_course {
+  border: 3px solid var(--main-color);
 }

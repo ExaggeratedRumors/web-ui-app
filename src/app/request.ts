@@ -1,13 +1,13 @@
-export class Request {
+export interface Request {
   id: number;
-  name: string;
-  lastname: string;
-  email: string;
-
-  constructor(id: number, name: string, lastname: string, email: string){
-      this.id = id;
-      this.name = name;
-      this.lastname = lastname;
-      this.email = email;
-  }
+  p0: string;
+  p1: string;
+  p2: string;
+  p3: string;
+  p4: string;
+  p5: string;
+  p6: string;
+  p7: string;
+  p8: string;
+  p9: string;
 }

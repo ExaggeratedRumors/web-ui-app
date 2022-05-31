@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,8 +15,8 @@ import { JavaComponent } from './java/java.component';
 import { HairdressingComponent } from './hairdressing/hairdressing.component';
 import { EntryFormComponent } from './entry-form/entry-form.component';
 import { CourseFormComponent } from './course-form/course-form.component';
-import { RouterModule } from '@angular/router';
 import { FaqComponent } from './faq/faq.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,8 +37,10 @@ import { FaqComponent } from './faq/faq.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,36 +5,87 @@
         <div class="col-xs-12 col-lg-12">
           <div class="container">
             <div class="row justify-content-center">
-              <div class="col-md-3 justify-content-center offset-1">
-                To jest testowy formularz, swobodnie edytujcie.
-                <div *ngFor="let item of requests">{{item.id}}. {{item.name}} {{item.lastname}} {{item.email}} </div>
+              <div class="col-md-5 justify-content-center offset-2">
+                <div class="descriptionIntro"><h3>{{this.info}}</h3></div>
+                <div>{{request.id}}. {{request.p0}} {{request.p1}} {{request.p2}} </div>
               </div>
             </div>
-          </div> <br><br>
+          </div>
             <form #formdata="ngForm" (ngSubmit)="submit()">
-              <div class="container">
+              <div id="create_course" class="container">
+                <br><br>
                   <div class="row justify-content-center">
                       <div class="col-md-2 form-group">
                           <p><label for="name">Imię</label></p>
-                          <input id="name" class="form-control" type="text" name="name" [(ngModel)]="request.name" placeholder="imię">
+                          <input id="name" class="form-control" type="text" name="name" [formControl]="name" placeholder="imię">
+                          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                          class="alert alert-danger">
+                              <div *ngIf="name.errors?.['required']">
+                                  Pole imię jest wymagane
+                              </div>
+                              <div *ngIf="name.errors?.['minlength']">
+                                  Nazwa jest zbyt krótka
+                              </div>
+                          </div>
                       </div>
+
                       <div class="col-md-2 form-group offset-md-1">
                           <p><label for="lastname">Nazwisko</label></p>
-                          <input id="lastname" class="form-control" type="text" name="lastname" [(ngModel)]="request.lastname" placeholder="nazwisko">
+                          <input id="lastname" class="form-control" type="text" name="lastname" [formControl]="lastname" placeholder="nazwisko">
+                          <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+                          class="alert alert-danger">
+                              <div *ngIf="lastname.errors?.['required']">
+                                  Pole nazwisko jest wymagane
+                              </div>
+                              <div *ngIf="lastname.errors?.['minlength']">
+                                  Nazwa jest zbyt krótka
+                              </div>
+                          </div>
                       </div>
                       <div class="col-md-2 form-group offset-md-1">
                           <p><label for="email">E-mail</label></p>
-                          <input id="email" class="form-control" type="text" name="email" [(ngModel)]="request.email" placeholder="e-mail">
+                          <input id="email" class="form-control" type="email" name="email" [formControl]="email" placeholder="e-mail" required>
+                          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                          class="alert alert-danger">
+                              <div *ngIf="email.errors?.['required']">
+                                  Pole e-mail jest wymagane
+                              </div>
+                              <div *ngIf="email.errors?.['email']">
+                                  Podaj prawidłowy adres
+                              </div>
+                          </div>
                       </div>
                   </div>
+                  <br><br>
+                  <div class="col-md-2 justify-content-center offset-5">
+                    <p><label for="price">Cena</label></p>
+                        <input id="price" class="form-control" type="text" name="price" placeholder="cena">
+                  </div>
+                  <br><br>
+                  <div class="col-md-12 justify-content-center offset-1">
+                    <p><label for="course_input_desc"><h3>Opis</h3></label></p>
+                            <textarea id="course_input_desc" class="form-control" type="text" name="desc" [formControl]="desc" placeholder="opis kursu" required>
+                            </textarea>
+                            <div *ngIf="desc.invalid && (desc.dirty || desc.touched)"
+                            class="alert alert-danger">
+                                <div *ngIf="desc.errors?.['required']">
+                                    Pole opis jest wymagane
+                                </div>
+                                <div *ngIf="desc.errors?.['minlength']">
+                                    Opis jest zbyt krótki
+                                </div>
+                            </div>
+                  </div>
+                  <br>
                 </div>
+
                 <hr>
+                <br>
                 <div class="container">
                     <div class="row justify-content-center">
                       <div class="col-md-2"></div>
-                      <div class="col-md-5 offset-md-2">
-                          <button class="btn btn-success offset-1" type="submit">Dodaj</button>
-                          <button class="btn btn-danger offset-1" type="button" (click)="remove()">Usuń</button>
+                      <div class="col-md-4 offset-md-1">
+                          <button class="btn btn-success offset-1" type="submit">Zapisz</button>
                           <button class="btn btn-primary offset-1" type="reset">Wyczyść</button>
                       </div>
                       <div class="col-md-2 offset-md-1"></div>
