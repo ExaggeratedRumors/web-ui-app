@@ -21,7 +21,6 @@ const routes: Routes = [];
       {path: 'dark-mode', component: DarkModeComponent},
       {path: 'swimming', component: SwimmingComponent},
       {path: 'main', component: MainComponent},
-      //{path: '**', component: MainComponent},
       {path: 'spawanie', component: SpawanieComponent},
       {path: 'list', component: ListComponent},
       {path: 'niemiecki', component: NiemieckiComponent},
@@ -31,7 +30,7 @@ const routes: Routes = [];
       {path: 'entry-form', component: EntryFormComponent},
       {path: 'course-form', component: CourseFormComponent},
       {path: 'faq', component: FaqComponent},
-      //{path: '', redirectTo: '/main', pathMatch: 'full'},
+      {path: '', redirectTo: '/main', pathMatch: 'full'},
     ]),
   ],
   exports: [RouterModule]
